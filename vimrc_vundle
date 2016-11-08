@@ -1,0 +1,81 @@
+set nocompatible
+filetype off
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""" VIM PLUGINS """"""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+Plugin 'tpope/vim-fugitive'                     " Git
+Plugin 'airblade/vim-gitgutter'
+
+
+Plugin 'scrooloose/nerdtree'                    " Exploration
+Plugin 'ctrlpvim/ctrlp.vim'
+
+Plugin 'scrooloose/syntastic'                   " Syntax
+
+Plugin 'tpope/vim-rails'                        " Ruby and rails
+Plugin 'tpope/vim-endwise'
+Plugin 'vim-ruby/vim-ruby'
+
+Plugin 'bling/vim-airline'                      " vim status
+Plugin 'rstacruz/sparkup'                       " HTML autocomplete
+Plugin 'tpope/vim-sensible'
+
+" style it
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'flazz/vim-colorschemes'
+
+"
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""" VIM CONFIG """""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" colorscheme
+syntax on
+colorscheme sky
+
+" common
+set number
+
+" vim-ruby
+let ruby_space_errors = 1
+
+" map escape
+imap jj <esc>
+
+" spacing
+set expandtab tabstop=2 shiftwidth=2 softtabstop=2
+
+"whitespacing
+nmap ,, :set list!<CR>
+set listchars=tab:».,eol:¬
+set list
+
+" Highlight search
+set incsearch
+set hlsearch
+highlight Search ctermbg=white ctermfg=black
+
+" no swapfile
+set noswapfile
+set t_Co=256
+
+" vim airline init
+set laststatus=2
+let g:bufferline_echo = 0
+
+" map nerdtree toggle
+nmap 9i :NERDTreeToggle<CR>
+let g:NERDTreeDirArrows=0
